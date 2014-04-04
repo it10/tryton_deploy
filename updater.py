@@ -8,7 +8,7 @@ execfile(activate_this, dict(__file__=activate_this))
 
 def database_list():
     """Fetch all databases in current instance"""
-    from trytond.backend import Database
+    from trytond.backend.postgresql import Database
     database = Database().connect()
     cursor = database.cursor()
     databases = database.list(cursor)
